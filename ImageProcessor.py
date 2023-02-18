@@ -1,5 +1,7 @@
 from PIL import Image
 import numpy as np
+import sys
+import getopt
 
 def getPixelMatrix(image: Image):
 
@@ -39,8 +41,7 @@ def getBrightnessMatrix(matrix):
     
     reshaped_array = np.array(brightness_array).reshape(-1,len(matrix[0]))
 
-    return reshaped_array
-            
+    return reshaped_array            
 
 def getAsciiMatrix(matrix):
 
@@ -62,8 +63,7 @@ def getAsciiMatrix(matrix):
 
     return reshaped_array
 
-
-def create_output_file(filename: str, content):
+def create_output_file(content, filename):
 
     string = '\n'.join(' '.join(str(cell) for cell in row) for row in content)
 
@@ -72,19 +72,3 @@ def create_output_file(filename: str, content):
         file.close()
 
 
-
-if __name__ == "__main__":
-
-    example_image = Image.open("example.jpg")
-
-    dimensions = example_image.size
-
-    pixel_matrix = getPixelMatrix(example_image)
-
-    brightness_matrix = getBrightnessMatrix(pixel_matrix)
-
-    ascii_matrix = getAsciiMatrix(brightness_matrix)
-
-    create_output_file("output.txt", ascii_matrix)
-
-    example_image.close()
