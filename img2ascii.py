@@ -17,9 +17,8 @@ def getOpts(argv):
     global arg_help
     
     try:
-        opts, args = getopt.getopt(argv[1:], "hi:u:o:", ["help", "input=", 
+        opts, args = getopt.getopt(argv[1:], "hi:rw:o:", ["help", "input=", 
         "resize-width=", "output="])
-        print(opts)
     except:
         print(arg_help)
         sys.exit(2)
