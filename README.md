@@ -1,7 +1,13 @@
 # cli-ascii-converter
 A simple command line tool for converting images to ASCII art
 
+## This Input
 ![lemur](https://github.com/shaanhash/cli-ascii-converter/blob/main/example.jpg?raw=true)
+
+## Turns into this Output
+*slight downscaling
+
+![lemur](https://github.com/shaanhash/cli-ascii-converter/blob/main/output_example.png?raw=true)
 
 ### How to Use
 
